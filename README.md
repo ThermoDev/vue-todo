@@ -1,4 +1,5 @@
 # todo_list
+The project is currently running on [netlify](https://sleepy-mcnulty-3e1e6f.netlify.app/#/).
 
 ## Project setup
 ```
