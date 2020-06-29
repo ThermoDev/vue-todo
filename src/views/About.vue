@@ -12,13 +12,16 @@
       newly "fetched" data.
     </p>
     <p>
-      Performance could be heavily improved if we are only updating local
+      Performance could be improved if we are only updating local
       variables, but doing it this way ensures that the code can be used if CRUD
       operations on a remote database server can be performed.
     </p>
-    <p>
-      You can learn more about vue.js by watching the following
-      <a href="https://www.youtube.com/watch?v=Wy9q22isx3U">video</a>
-    </p>
   </div>
 </template>
+
+<style>
+.about {
+  margin: auto;
+  max-width: 750px;
+}
+</style>

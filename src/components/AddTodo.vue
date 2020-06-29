@@ -6,14 +6,14 @@
         v-model="title"
         name="title"
         placeholder="Add Todo..."
-      >
-      <input type="submit" value="submit" class="btn" >
+      />
+      <input type="submit" value="submit" class="btn" />
     </form>
   </div>
 </template>
 
 <script>
-import {v4} from 'uuid';
+import { v4 } from 'uuid';
 export default {
   name: 'AddTodo',
   data() {
@@ -21,7 +21,7 @@ export default {
       title: '',
     };
   },
-  methods: { 
+  methods: {
     addTodo(e) {
       e.preventDefault();
       const newTodo = {
@@ -39,6 +39,9 @@ export default {
 <style scoped>
 form {
   display: flex;
+  width: 250px;
+  margin: auto;
+  padding: 20px;
 }
 input[type='text'] {
   flex: 10;

@@ -20,8 +20,8 @@ export default {
   methods: {
     async deleteTodo(id) {
       try {
-        await axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`);
         this.todos = this.todos.filter((todo) => todo.id !== id);
+        await axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`);
       } catch (e) {
         console.log('Error: ' + e);
       }
@@ -31,6 +31,7 @@ export default {
     async addTodo(newTodo) {
       try {
         const { title, completed } = newTodo;
+        this.todos = [...this.todos, res.data];
         const res = await axios.post(
           'https://jsonplaceholder.typicode.com/todos',
           {
@@ -38,7 +39,6 @@ export default {
             completed,
           }
         );
-        this.todos = [...this.todos, res.data];
       } catch (e) {
         console.log('Error: ' + e);
       }
@@ -63,6 +63,7 @@ export default {
   box-sizing: border-box;
   margin: 0px;
   padding: 0px;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
