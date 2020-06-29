@@ -1,5 +1,5 @@
 # TODO List App in Vue.js
-The project is currently running on [netlify](https://sleepy-mcnulty-3e1e6f.netlify.app/#/).
+The project is currently running on [netlify](https://thermo-vue-todo.netlify.app/).
 
 ## About
 The Todo operations makes fake API requests that apply the async await
