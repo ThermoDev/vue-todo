@@ -18,20 +18,22 @@ export default {
     };
   },
   methods: {
+    
+    // Async/Await function to Delete a TODO item using it's ID
     async deleteTodo(id) {
       try {
-        this.todos = this.todos.filter((todo) => todo.id !== id);
-        await axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`);
+        this.todos = this.todos.filter((todo) => todo.id !== id); // Keep every id that isn't this current one
+        await axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`); // Axios DELETE request to jsonplaceholder to delete ID
       } catch (e) {
-        console.log('Error: ' + e);
+        console.log('Error: ' + e)
       }
-
-      this.todos = this.todos.filter((todo) => todo.id !== id);
     },
+
+    // Async/Await function to Add a todo item 
     async addTodo(newTodo) {
       try {
-        const { title, completed } = newTodo;
-        this.todos = [...this.todos, res.data];
+        const { id, title, completed } = newTodo; // ES6 Syntax to retrieve newTodo Title and Completed
+        this.todos = [...this.todos, {id, title, completed }]; // Add todo await after awaiting response results
         const res = await axios.post(
           'https://jsonplaceholder.typicode.com/todos',
           {
@@ -39,11 +41,16 @@ export default {
             completed,
           }
         );
+        /* For purposes of this App, we will not await the results to add a new todo item */
+        console.log(res.data);
+        // this.todos = [...this.todos, res.data]; // Add todo await after awaiting response results
       } catch (e) {
         console.log('Error: ' + e);
       }
     },
   },
+
+  // Fetches 4 todo items from jsonplaceholder upon creation
   async created() {
     try {
       const res = await axios.get(

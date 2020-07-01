@@ -14,7 +14,7 @@ export default {
   props: ['todo'],
   methods: {
     markComplete() {
-      this.todo.completed = !this.todo.completed; 
+      this.todo.completed = !this.todo.completed;
     },
   },
 };
@@ -27,9 +27,11 @@ export default {
   padding: 10px;
   border-bottom: 1px #8d8d8d dotted;
   cursor: pointer;
+  min-height: 43px;
+  user-select: none; /* Disable Highlighting of Text */
 }
 
-.todo-item:hover{
+.todo-item:hover {
   background-color: #8eacbb;
 }
 

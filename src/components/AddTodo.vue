@@ -7,7 +7,7 @@
         name="title"
         placeholder="Add Todo..."
       />
-      <input type="submit" value="submit" class="btn" />
+      <input type="submit" value="Add" class="btn" />
     </form>
   </div>
 </template>
